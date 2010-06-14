@@ -1,0 +1,488 @@
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;36;1mSQL (1.3ms)[0m   [0;1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateEmpleados (20100611185313)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "empleados" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "paterno" varchar(40), "materno" varchar(40), "nombre" varchar(60), "telefono" varchar(10), "correo" varchar(40), "puesto_id" integer, "area_id" integer) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100611185313')[0m
+Migrating to CreateAreas (20100611185624)
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "areas" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "jerarquia_id" integer) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100611185624')[0m
+Migrating to CreateJerarquias (20100611185716)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "jerarquias" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "nombre" varchar(255), "prioridad" integer) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100611185716')[0m
+Migrating to CreatePuestos (20100611185755)
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "puestos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "puesto" varchar(255)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100611185755')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("areas")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("empleados")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("jerarquias")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("puestos")[0m
+  [4;36;1mJerarquia Create (0.3ms)[0m   [0;1mINSERT INTO "jerarquias" ("prioridad", "nombre") VALUES(1, 'Subsecretaria')[0m
+  [4;35;1mPuesto Create (0.5ms)[0m   [0mINSERT INTO "puestos" ("puesto") VALUES('Subsecretario')[0m
+  [4;36;1mArea Create (1.3ms)[0m   [0;1mINSERT INTO "areas" ("nombre", "jerarquia_id") VALUES('Subsecretar’a de Educacion Federalizada', 1)[0m
+  [4;35;1mEmpleado Create (0.5ms)[0m   [0mINSERT INTO "empleados" ("telefono", "nombre", "puesto_id", "correo", "area_id", "materno", "paterno") VALUES(NULL, 'FRANCISCO', 1, 'fdiaz@sef-chiapas.gob.mx', 1, 'GONZALEZ', 'DIAZ')[0m
+  [4;36;1mEmpleado Load (0.3ms)[0m   [0;1mSELECT * FROM "empleados" WHERE ("empleados"."paterno" = 'DIAZ') LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mArea Load (0.3ms)[0m   [0;1mSELECT * FROM "areas" WHERE ("areas"."id" = 1) [0m
+  [4;35;1mPuesto Load (0.3ms)[0m   [0mSELECT * FROM "puestos" WHERE ("puestos"."id" = 1) [0m
+
+
+Processing EmpleadosController#index (for 127.0.0.1 at 2010-06-11 14:16:17) [GET]
+  [4;36;1mEmpleado Load (0.5ms)[0m   [0;1mSELECT * FROM "empleados" [0m
+Rendering template within layouts/empleados
+Rendering empleados/index
+Completed in 73ms (View: 60, DB: 0) | 200 OK [http://localhost/empleados]
+
+
+Processing EmpleadosController#new (for 127.0.0.1 at 2010-06-11 14:16:20) [GET]
+Rendering template within layouts/empleados
+Rendering empleados/new
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/empleados/new]
+
+
+Processing EmpleadosController#index (for 127.0.0.1 at 2010-06-11 14:16:26) [GET]
+  [4;35;1mEmpleado Load (0.4ms)[0m   [0mSELECT * FROM "empleados" [0m
+Rendering template within layouts/empleados
+Rendering empleados/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/empleados]
+
+
+Processing EmpleadosController#index (for 127.0.0.1 at 2010-06-11 14:41:07) [GET]
+  [4;36;1mEmpleado Load (0.4ms)[0m   [0;1mSELECT * FROM "empleados" [0m
+Rendering template within layouts/empleados
+Rendering empleados/index
+
+ActionView::TemplateError (undefined method `email' for #<Empleado:0x1044ebe70>) on line #18 of app/views/empleados/index.html.erb:
+15:     <td><%=h empleado.materno %></td>
+16:     <td><%=h empleado.nombre %></td>
+17:     <td><%=h empleado.telefono %></td>
+18:     <td><%=h empleado.email %></td>
+19:     <td><%= link_to 'Show', empleado %></td>
+20:     <td><%= link_to 'Edit', edit_empleado_path(empleado) %></td>
+21:     <td><%= link_to 'Destroy', empleado, :confirm => 'Are you sure?', :method => :delete %></td>
+
+    app/views/empleados/index.html.erb:18
+    app/views/empleados/index.html.erb:12:in `each'
+    app/views/empleados/index.html.erb:12
+    app/controllers/empleados_controller.rb:7:in `index'
+
+Rendered rescues/_trace (36.0ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EmpleadosController#index (for 127.0.0.1 at 2010-06-11 14:41:10) [GET]
+  [4;35;1mEmpleado Load (0.4ms)[0m   [0mSELECT * FROM "empleados" [0m
+Rendering template within layouts/empleados
+Rendering empleados/index
+
+ActionView::TemplateError (undefined method `email' for #<Empleado:0x10415ff40>) on line #18 of app/views/empleados/index.html.erb:
+15:     <td><%=h empleado.materno %></td>
+16:     <td><%=h empleado.nombre %></td>
+17:     <td><%=h empleado.telefono %></td>
+18:     <td><%=h empleado.email %></td>
+19:     <td><%= link_to 'Show', empleado %></td>
+20:     <td><%= link_to 'Edit', edit_empleado_path(empleado) %></td>
+21:     <td><%= link_to 'Destroy', empleado, :confirm => 'Are you sure?', :method => :delete %></td>
+
+    app/views/empleados/index.html.erb:18
+    app/views/empleados/index.html.erb:12:in `each'
+    app/views/empleados/index.html.erb:12
+    app/controllers/empleados_controller.rb:7:in `index'
+
+Rendered rescues/_trace (92.3ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EmpleadosController#index (for 127.0.0.1 at 2010-06-11 14:42:43) [GET]
+  [4;36;1mEmpleado Load (0.4ms)[0m   [0;1mSELECT * FROM "empleados" [0m
+Rendering template within layouts/empleados
+Rendering empleados/index
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/empleados]
+
+
+Processing EmpleadosController#new (for 127.0.0.1 at 2010-06-11 14:42:49) [GET]
+Rendering template within layouts/empleados
+Rendering empleados/new
+Completed in 13ms (View: 8, DB: 0) | 200 OK [http://localhost/empleados/new]
+
+
+Processing EmpleadosController#edit (for 127.0.0.1 at 2010-06-11 14:43:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mEmpleado Load (0.2ms)[0m   [0mSELECT * FROM "empleados" WHERE ("empleados"."id" = 1) [0m
+Rendering template within layouts/empleados
+Rendering empleados/edit
+Completed in 67ms (View: 62, DB: 0) | 200 OK [http://localhost/empleados/1/edit]
+
+
+Processing EmpleadosController#new (for 127.0.0.1 at 2010-06-11 14:43:11) [GET]
+Rendering template within layouts/empleados
+Rendering empleados/new
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/empleados/new]
+
+
+Processing EmpleadosController#create (for 127.0.0.1 at 2010-06-11 14:43:32) [POST]
+  Parameters: {"commit"=>"Create", "empleado"=>{"telefono"=>"989844", "nombre"=>"JUAN MANUEL", "puesto_id"=>"2", "correo"=>"rr", "materno"=>"MATUS", "paterno"=>"PEREZ"}, "authenticity_token"=>"ScGRS0zH7Hj4+9LT4TNtWJ0zyhQYjl59N9WPTDh8zuw="}
+  [4;36;1mEmpleado Create (0.3ms)[0m   [0;1mINSERT INTO "empleados" ("telefono", "nombre", "puesto_id", "correo", "area_id", "materno", "paterno") VALUES('989844', 'JUAN MANUEL', 2, 'rr', NULL, 'MATUS', 'PEREZ')[0m
+Redirected to http://localhost:3001/empleados/2
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/empleados]
+
+
+Processing EmpleadosController#show (for 127.0.0.1 at 2010-06-11 14:43:32) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mEmpleado Load (0.3ms)[0m   [0mSELECT * FROM "empleados" WHERE ("empleados"."id" = 2) [0m
+Rendering template within layouts/empleados
+Rendering empleados/show
+Completed in 12ms (View: 6, DB: 0) | 200 OK [http://localhost/empleados/2]
+
+
+Processing EmpleadosController#index (for 127.0.0.1 at 2010-06-11 14:43:35) [GET]
+  [4;36;1mEmpleado Load (0.5ms)[0m   [0;1mSELECT * FROM "empleados" [0m
+Rendering template within layouts/empleados
+Rendering empleados/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/empleados]
+
+
+Processing EmpleadosController#show (for 127.0.0.1 at 2010-06-11 14:43:58) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mEmpleado Load (0.2ms)[0m   [0mSELECT * FROM "empleados" WHERE ("empleados"."id" = 1) [0m
+Rendering template within layouts/empleados
+Rendering empleados/show
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/empleados/1]
+
+
+Processing EmpleadosController#index (for 127.0.0.1 at 2010-06-11 14:44:53) [GET]
+  [4;36;1mEmpleado Load (0.5ms)[0m   [0;1mSELECT * FROM "empleados" [0m
+Rendering template within layouts/empleados
+Rendering empleados/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/empleados]
+
+
+Processing EmpleadosController#show (for 127.0.0.1 at 2010-06-11 14:44:56) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mEmpleado Load (0.2ms)[0m   [0mSELECT * FROM "empleados" WHERE ("empleados"."id" = 1) [0m
+Rendering template within layouts/empleados
+Rendering empleados/show
+  [4;36;1mPuesto Load (0.2ms)[0m   [0;1mSELECT * FROM "puestos" WHERE ("puestos"."id" = 1) [0m
+  [4;35;1mArea Load (0.2ms)[0m   [0mSELECT * FROM "areas" WHERE ("areas"."id" = 1) [0m
+Completed in 83ms (View: 79, DB: 1) | 200 OK [http://localhost/empleados/1]
+
+
+Processing EmpleadosController#show (for 127.0.0.1 at 2010-06-11 14:45:53) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mEmpleado Load (0.2ms)[0m   [0;1mSELECT * FROM "empleados" WHERE ("empleados"."id" = 1) [0m
+Rendering template within layouts/empleados
+Rendering empleados/show
+  [4;35;1mPuesto Load (0.2ms)[0m   [0mSELECT * FROM "puestos" WHERE ("puestos"."id" = 1) [0m
+  [4;36;1mArea Load (0.2ms)[0m   [0;1mSELECT * FROM "areas" WHERE ("areas"."id" = 1) [0m
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/empleados/1]
+
+
+Processing EmpleadosController#index (for 127.0.0.1 at 2010-06-11 14:47:30) [GET]
+  [4;35;1mEmpleado Load (0.5ms)[0m   [0mSELECT * FROM "empleados" [0m
+Rendering template within layouts/empleados
+Rendering empleados/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/empleados]
+
+
+Processing EmpleadosController#show (for 127.0.0.1 at 2010-06-11 14:47:32) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mEmpleado Load (0.2ms)[0m   [0;1mSELECT * FROM "empleados" WHERE ("empleados"."id" = 1) [0m
+Rendering template within layouts/empleados
+Rendering empleados/show
+  [4;35;1mPuesto Load (0.2ms)[0m   [0mSELECT * FROM "puestos" WHERE ("puestos"."id" = 1) [0m
+  [4;36;1mArea Load (0.2ms)[0m   [0;1mSELECT * FROM "areas" WHERE ("areas"."id" = 1) [0m
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/empleados/1]
+
+
+Processing EmpleadosController#show (for 127.0.0.1 at 2010-06-11 14:47:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mEmpleado Load (0.2ms)[0m   [0mSELECT * FROM "empleados" WHERE ("empleados"."id" = 1) [0m
+Rendering template within layouts/empleados
+Rendering empleados/show
+  [4;36;1mPuesto Load (0.2ms)[0m   [0;1mSELECT * FROM "puestos" WHERE ("puestos"."id" = 1) [0m
+  [4;35;1mArea Load (0.2ms)[0m   [0mSELECT * FROM "areas" WHERE ("areas"."id" = 1) [0m
+Completed in 13ms (View: 9, DB: 1) | 200 OK [http://localhost/empleados/1]
+
+
+Processing EmpleadosController#show (for 127.0.0.1 at 2010-06-11 14:47:34) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mEmpleado Load (0.2ms)[0m   [0;1mSELECT * FROM "empleados" WHERE ("empleados"."id" = 1) [0m
+Rendering template within layouts/empleados
+Rendering empleados/show
+  [4;35;1mPuesto Load (0.2ms)[0m   [0mSELECT * FROM "puestos" WHERE ("puestos"."id" = 1) [0m
+  [4;36;1mArea Load (0.2ms)[0m   [0;1mSELECT * FROM "areas" WHERE ("areas"."id" = 1) [0m
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/empleados/1]
+
+
+Processing EmpleadosController#show (for 127.0.0.1 at 2010-06-11 14:47:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mEmpleado Load (0.2ms)[0m   [0mSELECT * FROM "empleados" WHERE ("empleados"."id" = 1) [0m
+Rendering template within layouts/empleados
+Rendering empleados/show
+  [4;36;1mPuesto Load (0.2ms)[0m   [0;1mSELECT * FROM "puestos" WHERE ("puestos"."id" = 1) [0m
+  [4;35;1mArea Load (0.2ms)[0m   [0mSELECT * FROM "areas" WHERE ("areas"."id" = 1) [0m
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/empleados/1]
+
+
+Processing EmpleadosController#index (for 127.0.0.1 at 2010-06-11 14:47:44) [GET]
+  [4;36;1mEmpleado Load (0.5ms)[0m   [0;1mSELECT * FROM "empleados" [0m
+Rendering template within layouts/empleados
+Rendering empleados/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/empleados]
+
+
+Processing EmpleadosController#edit (for 127.0.0.1 at 2010-06-11 14:47:47) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mEmpleado Load (0.2ms)[0m   [0mSELECT * FROM "empleados" WHERE ("empleados"."id" = 1) [0m
+Rendering template within layouts/empleados
+Rendering empleados/edit
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/empleados/1/edit]
+
+
+Processing EmpleadosController#new (for 127.0.0.1 at 2010-06-11 14:47:59) [GET]
+Rendering template within layouts/empleados
+Rendering empleados/new
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/empleados/new]
+
+
+Processing EmpleadosController#show (for 127.0.0.1 at 2010-06-11 14:49:37) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mEmpleado Load (0.2ms)[0m   [0;1mSELECT * FROM "empleados" WHERE ("empleados"."id" = 1) [0m
+Rendering template within layouts/empleados
+Rendering empleados/show
+  [4;35;1mPuesto Load (0.2ms)[0m   [0mSELECT * FROM "puestos" WHERE ("puestos"."id" = 1) [0m
+  [4;36;1mArea Load (0.2ms)[0m   [0;1mSELECT * FROM "areas" WHERE ("areas"."id" = 1) [0m
+Completed in 65ms (View: 60, DB: 1) | 200 OK [http://localhost/empleados/1]
+
+
+Processing EmpleadosController#show (for 127.0.0.1 at 2010-06-11 14:49:39) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mEmpleado Load (0.2ms)[0m   [0mSELECT * FROM "empleados" WHERE ("empleados"."id" = 1) [0m
+Rendering template within layouts/empleados
+Rendering empleados/show
+  [4;36;1mPuesto Load (0.2ms)[0m   [0;1mSELECT * FROM "puestos" WHERE ("puestos"."id" = 1) [0m
+  [4;35;1mArea Load (0.2ms)[0m   [0mSELECT * FROM "areas" WHERE ("areas"."id" = 1) [0m
+Completed in 14ms (View: 9, DB: 1) | 200 OK [http://localhost/empleados/1]
+
+
+Processing EmpleadosController#show (for 127.0.0.1 at 2010-06-11 14:49:40) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mEmpleado Load (0.2ms)[0m   [0;1mSELECT * FROM "empleados" WHERE ("empleados"."id" = 1) [0m
+Rendering template within layouts/empleados
+Rendering empleados/show
+  [4;35;1mPuesto Load (0.2ms)[0m   [0mSELECT * FROM "puestos" WHERE ("puestos"."id" = 1) [0m
+  [4;36;1mArea Load (0.2ms)[0m   [0;1mSELECT * FROM "areas" WHERE ("areas"."id" = 1) [0m
+Completed in 14ms (View: 9, DB: 1) | 200 OK [http://localhost/empleados/1]
+
+
+Processing EmpleadosController#show (for 127.0.0.1 at 2010-06-11 14:49:41) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mEmpleado Load (0.2ms)[0m   [0mSELECT * FROM "empleados" WHERE ("empleados"."id" = 1) [0m
+Rendering template within layouts/empleados
+Rendering empleados/show
+  [4;36;1mPuesto Load (0.2ms)[0m   [0;1mSELECT * FROM "puestos" WHERE ("puestos"."id" = 1) [0m
+  [4;35;1mArea Load (0.2ms)[0m   [0mSELECT * FROM "areas" WHERE ("areas"."id" = 1) [0m
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/empleados/1]
+
+
+Processing EmpleadosController#show (for 127.0.0.1 at 2010-06-11 14:50:07) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mEmpleado Load (0.2ms)[0m   [0;1mSELECT * FROM "empleados" WHERE ("empleados"."id" = 1) [0m
+Rendering template within layouts/empleados
+Rendering empleados/show
+  [4;35;1mPuesto Load (0.2ms)[0m   [0mSELECT * FROM "puestos" WHERE ("puestos"."id" = 1) [0m
+  [4;36;1mArea Load (0.2ms)[0m   [0;1mSELECT * FROM "areas" WHERE ("areas"."id" = 1) [0m
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/empleados/1]
+
+
+Processing EmpleadosController#show (for 127.0.0.1 at 2010-06-11 14:50:10) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mEmpleado Load (0.2ms)[0m   [0mSELECT * FROM "empleados" WHERE ("empleados"."id" = 1) [0m
+Rendering template within layouts/empleados
+Rendering empleados/show
+  [4;36;1mPuesto Load (0.2ms)[0m   [0;1mSELECT * FROM "puestos" WHERE ("puestos"."id" = 1) [0m
+  [4;35;1mArea Load (0.2ms)[0m   [0mSELECT * FROM "areas" WHERE ("areas"."id" = 1) [0m
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/empleados/1]
+
+
+Processing EmpleadosController#index (for 127.0.0.1 at 2010-06-11 14:50:59) [GET]
+  [4;36;1mEmpleado Load (0.5ms)[0m   [0;1mSELECT * FROM "empleados" [0m
+Rendering template within layouts/empleados
+Rendering empleados/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/empleados]
+
+
+Processing EmpleadosController#show (for 127.0.0.1 at 2010-06-11 14:51:01) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mEmpleado Load (0.2ms)[0m   [0mSELECT * FROM "empleados" WHERE ("empleados"."id" = 1) [0m
+Rendering template within layouts/empleados
+Rendering empleados/show
+  [4;36;1mPuesto Load (0.2ms)[0m   [0;1mSELECT * FROM "puestos" WHERE ("puestos"."id" = 1) [0m
+  [4;35;1mArea Load (0.2ms)[0m   [0mSELECT * FROM "areas" WHERE ("areas"."id" = 1) [0m
+Completed in 15ms (View: 10, DB: 1) | 200 OK [http://localhost/empleados/1]
+
+
+Processing EmpleadosController#index (for 127.0.0.1 at 2010-06-11 14:51:15) [GET]
+  [4;36;1mEmpleado Load (0.5ms)[0m   [0;1mSELECT * FROM "empleados" [0m
+Rendering template within layouts/empleados
+Rendering empleados/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/empleados]
+
+
+Processing EmpleadosController#show (for 127.0.0.1 at 2010-06-11 14:51:56) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mEmpleado Load (0.2ms)[0m   [0mSELECT * FROM "empleados" WHERE ("empleados"."id" = 1) [0m
+Rendering template within layouts/empleados
+Rendering empleados/show
+  [4;36;1mPuesto Load (0.2ms)[0m   [0;1mSELECT * FROM "puestos" WHERE ("puestos"."id" = 1) [0m
+  [4;35;1mArea Load (0.2ms)[0m   [0mSELECT * FROM "areas" WHERE ("areas"."id" = 1) [0m
+Completed in 13ms (View: 8, DB: 1) | 200 OK [http://localhost/empleados/1]
+
+
+Processing EmpleadosController#index to xml (for 127.0.0.1 at 2010-06-11 14:52:28) [GET]
+  [4;36;1mEmpleado Load (0.5ms)[0m   [0;1mSELECT * FROM "empleados" [0m
+Completed in 59ms (View: 4, DB: 0) | 200 OK [http://localhost/empleados.xml]
+
+
+Processing EmpleadosController#show to xml (for 127.0.0.1 at 2010-06-11 14:56:34) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mEmpleado Load (0.2ms)[0m   [0mSELECT * FROM "empleados" WHERE ("empleados"."id" = 1) [0m
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/empleados/1.xml]
+
+
+Processing EmpleadosController#show to xml (for 127.0.0.1 at 2010-06-11 14:56:38) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mEmpleado Load (0.2ms)[0m   [0;1mSELECT * FROM "empleados" WHERE ("empleados"."id" = 2) [0m
+Completed in 7ms (View: 2, DB: 0) | 200 OK [http://localhost/empleados/2.xml]
+
+
+Processing EmpleadosController#index (for 127.0.0.1 at 2010-06-11 15:09:24) [GET]
+  [4;35;1mEmpleado Load (0.5ms)[0m   [0mSELECT * FROM "empleados" [0m
+Rendering template within layouts/empleados
+Rendering empleados/index
+Completed in 13ms (View: 9, DB: 1) | 200 OK [http://localhost/empleados/]
+
+
+Processing EmpleadosController#new (for 127.0.0.1 at 2010-06-11 15:09:25) [GET]
+Rendering template within layouts/empleados
+Rendering empleados/new
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/empleados/new]
+
+
+Processing EmpleadosController#new (for 127.0.0.1 at 2010-06-11 15:10:42) [GET]
+  [4;36;1mPuesto Load (0.2ms)[0m   [0;1mSELECT * FROM "puestos" [0m
+Rendering template within layouts/empleados
+Rendering empleados/new
+
+ActionView::TemplateError (undefined method `merge' for :id:Symbol) on line #27 of app/views/empleados/new.html.erb:
+24:     <%= f.text_field :correo %>
+25:   </p>
+26:   <p>
+27:     <%= f.select :puesto_id, @puestos, :id, :puesto %><br />
+28:   </p>
+29:   <p>
+30:     <%= f.submit 'Create' %>
+
+    app/views/empleados/new.html.erb:27
+    app/views/empleados/new.html.erb:3
+    app/controllers/empleados_controller.rb:30:in `new'
+
+Rendered rescues/_trace (88.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EmpleadosController#new (for 127.0.0.1 at 2010-06-11 15:11:15) [GET]
+  [4;35;1mPuesto Load (0.2ms)[0m   [0mSELECT * FROM "puestos" [0m
+Rendering template within layouts/empleados
+Rendering empleados/new
+
+ActionView::TemplateError (undefined method `merge' for "id":String) on line #27 of app/views/empleados/new.html.erb:
+24:     <%= f.text_field :correo %>
+25:   </p>
+26:   <p>
+27:     <%= f.select :puesto_id, @puestos, "id", "puesto" %><br />
+28:   </p>
+29:   <p>
+30:     <%= f.submit 'Create' %>
+
+    app/views/empleados/new.html.erb:27
+    app/views/empleados/new.html.erb:3
+    app/controllers/empleados_controller.rb:30:in `new'
+
+Rendered rescues/_trace (92.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EmpleadosController#new (for 127.0.0.1 at 2010-06-11 15:12:51) [GET]
+  [4;36;1mPuesto Load (0.2ms)[0m   [0;1mSELECT * FROM "puestos" [0m
+Rendering template within layouts/empleados
+Rendering empleados/new
+
+ActionView::TemplateError (undefined local variable or method `puesto' for #<ActionView::Base:0x10446a140>) on line #27 of app/views/empleados/new.html.erb:
+24:     <%= f.text_field :correo %>
+25:   </p>
+26:   <p>
+27:     <%= f.select :puesto_id, @puestos.collect{|registro|[registro, puesto] } %><br />
+28:   </p>
+29:   <p>
+30:     <%= f.submit 'Create' %>
+
+    app/views/empleados/new.html.erb:27
+    app/views/empleados/new.html.erb:27:in `collect'
+    app/views/empleados/new.html.erb:27
+    app/views/empleados/new.html.erb:3
+    app/controllers/empleados_controller.rb:30:in `new'
+
+Rendered rescues/_trace (34.2ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing EmpleadosController#new (for 127.0.0.1 at 2010-06-11 15:13:03) [GET]
+  [4;35;1mPuesto Load (0.2ms)[0m   [0mSELECT * FROM "puestos" [0m
+Rendering template within layouts/empleados
+Rendering empleados/new
+Completed in 71ms (View: 64, DB: 0) | 200 OK [http://localhost/empleados/new]
+
+
+Processing EmpleadosController#new (for 127.0.0.1 at 2010-06-11 15:16:20) [GET]
+  [4;36;1mPuesto Load (0.2ms)[0m   [0;1mSELECT * FROM "puestos" [0m
+Rendering template within layouts/empleados
+Rendering empleados/new
+Completed in 15ms (View: 9, DB: 0) | 200 OK [http://localhost/empleados/new]
+
+
+Processing EmpleadosController#new (for 127.0.0.1 at 2010-06-11 15:16:36) [GET]
+  [4;35;1mPuesto Load (0.2ms)[0m   [0mSELECT * FROM "puestos" [0m
+Rendering template within layouts/empleados
+Rendering empleados/new
+Completed in 15ms (View: 9, DB: 0) | 200 OK [http://localhost/empleados/new]
