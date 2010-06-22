@@ -486,3 +486,352 @@ Processing EmpleadosController#new (for 127.0.0.1 at 2010-06-11 15:16:36) [GET]
 Rendering template within layouts/empleados
 Rendering empleados/new
 Completed in 15ms (View: 9, DB: 0) | 200 OK [http://localhost/empleados/new]
+  [4;36;1mSQL (0.5ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateEmpleados (20100611185313)
+Migrating to CreateAreas (20100611185624)
+Migrating to CreateJerarquias (20100611185716)
+Migrating to CreatePuestos (20100611185755)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("areas")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("empleados")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("jerarquias")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("puestos")[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateEmpleados (20100611185313)
+Migrating to CreateAreas (20100611185624)
+Migrating to CreateJerarquias (20100611185716)
+Migrating to CreatePuestos (20100611185755)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("areas")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("empleados")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("jerarquias")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("puestos")[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-15 19:34:30) [GET]
+
+ActionController::RoutingError (No route matches "/terceros" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-15 19:34:58) [GET]
+
+ActionController::RoutingError (No route matches "/terceros" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-15 19:35:19) [GET]
+
+ActionController::RoutingError (No route matches "/terceros" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreatePuestos (20100611185755)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mDROP TABLE "puestos"[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20100611185755'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("areas")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("empleados")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("jerarquias")[0m
+
+
+Processing PuestosController#index (for 127.0.0.1 at 2010-06-21 15:03:42) [GET]
+  [4;36;1mPuesto Load (0.0ms)[0m   [0;1mSQLite3::SQLException: no such table: puestos: SELECT * FROM "puestos" [0m
+
+ActiveRecord::StatementInvalid (SQLite3::SQLException: no such table: puestos: SELECT * FROM "puestos" ):
+  app/controllers/puestos_controller.rb:5:in `index'
+
+Rendered rescues/_trace (92.6ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateEmpleados (20100611185313)
+Migrating to CreateAreas (20100611185624)
+Migrating to CreateJerarquias (20100611185716)
+Migrating to CreatePuestos (20100611185755)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "puestos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "puesto" varchar(255)) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100611185755')[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("areas")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("empleados")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("jerarquias")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("puestos")[0m
+
+
+Processing PuestosController#index (for 127.0.0.1 at 2010-06-21 15:06:10) [GET]
+  [4;35;1mPuesto Load (0.3ms)[0m   [0mSELECT * FROM "puestos" [0m
+Rendering template within layouts/puestos
+Rendering puestos/index
+Completed in 47ms (View: 43, DB: 0) | 200 OK [http://localhost/puestos]
+
+
+Processing PuestosController#new (for 127.0.0.1 at 2010-06-21 15:06:18) [GET]
+Rendering template within layouts/puestos
+Rendering puestos/new
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/puestos/new]
+
+
+Processing PuestosController#create (for 127.0.0.1 at 2010-06-21 15:06:46) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"+H6TLoleVgrJfRUvFadh4adHbA2T5cTqEFNL9w2aN1s=", "puesto"=>{"puesto"=>"JEFE DE DEPARTAMENTO"}}
+  [4;36;1mPuesto Create (0.3ms)[0m   [0;1mINSERT INTO "puestos" ("puesto") VALUES('JEFE DE DEPARTAMENTO')[0m
+Redirected to http://localhost:3001/puestos/1
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/puestos]
+
+
+Processing PuestosController#show (for 127.0.0.1 at 2010-06-21 15:06:46) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mPuesto Load (0.1ms)[0m   [0mSELECT * FROM "puestos" WHERE ("puestos"."id" = 1) [0m
+Rendering template within layouts/puestos
+Rendering puestos/show
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/puestos/1]
+
+
+Processing PuestosController#index (for 127.0.0.1 at 2010-06-21 15:06:49) [GET]
+  [4;36;1mPuesto Load (0.3ms)[0m   [0;1mSELECT * FROM "puestos" [0m
+Rendering template within layouts/puestos
+Rendering puestos/index
+Completed in 56ms (View: 52, DB: 0) | 200 OK [http://localhost/puestos]
+
+
+Processing PuestosController#new (for 127.0.0.1 at 2010-06-21 15:06:51) [GET]
+Rendering template within layouts/puestos
+Rendering puestos/new
+Completed in 7ms (View: 3, DB: 0) | 200 OK [http://localhost/puestos/new]
+
+
+Processing PuestosController#create (for 127.0.0.1 at 2010-06-21 15:07:03) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"+H6TLoleVgrJfRUvFadh4adHbA2T5cTqEFNL9w2aN1s=", "puesto"=>{"puesto"=>"JEFE DE OFICINA"}}
+  [4;35;1mPuesto Create (0.3ms)[0m   [0mINSERT INTO "puestos" ("puesto") VALUES('JEFE DE OFICINA')[0m
+Redirected to http://localhost:3001/puestos/2
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/puestos]
+
+
+Processing PuestosController#show (for 127.0.0.1 at 2010-06-21 15:07:03) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mPuesto Load (0.1ms)[0m   [0;1mSELECT * FROM "puestos" WHERE ("puestos"."id" = 2) [0m
+Rendering template within layouts/puestos
+Rendering puestos/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://localhost/puestos/2]
+
+
+Processing PuestosController#index (for 127.0.0.1 at 2010-06-21 15:07:05) [GET]
+  [4;35;1mPuesto Load (0.4ms)[0m   [0mSELECT * FROM "puestos" [0m
+Rendering template within layouts/puestos
+Rendering puestos/index
+Completed in 11ms (View: 6, DB: 0) | 200 OK [http://localhost/puestos]
+
+
+Processing PuestosController#new (for 127.0.0.1 at 2010-06-21 15:07:07) [GET]
+Rendering template within layouts/puestos
+Rendering puestos/new
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/puestos/new]
+
+
+Processing PuestosController#create (for 127.0.0.1 at 2010-06-21 15:07:22) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"+H6TLoleVgrJfRUvFadh4adHbA2T5cTqEFNL9w2aN1s=", "puesto"=>{"puesto"=>"DIRECTOR"}}
+  [4;36;1mPuesto Create (0.3ms)[0m   [0;1mINSERT INTO "puestos" ("puesto") VALUES('DIRECTOR')[0m
+Redirected to http://localhost:3001/puestos/3
+Completed in 7ms (DB: 0) | 302 Found [http://localhost/puestos]
+
+
+Processing PuestosController#show (for 127.0.0.1 at 2010-06-21 15:07:22) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mPuesto Load (0.3ms)[0m   [0mSELECT * FROM "puestos" WHERE ("puestos"."id" = 3) [0m
+Rendering template within layouts/puestos
+Rendering puestos/show
+Completed in 60ms (View: 2, DB: 0) | 200 OK [http://localhost/puestos/3]
+
+
+Processing PuestosController#index (for 127.0.0.1 at 2010-06-21 15:07:25) [GET]
+  [4;36;1mPuesto Load (0.4ms)[0m   [0;1mSELECT * FROM "puestos" [0m
+Rendering template within layouts/puestos
+Rendering puestos/index
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/puestos]
+
+
+Processing AreasController#index (for 127.0.0.1 at 2010-06-21 15:07:42) [GET]
+  [4;35;1mArea Load (0.4ms)[0m   [0mSELECT * FROM "areas" [0m
+Rendering template within layouts/areas
+Rendering areas/index
+Completed in 19ms (View: 14, DB: 0) | 200 OK [http://localhost/areas]
+
+
+Processing AreasController#edit (for 127.0.0.1 at 2010-06-21 15:07:47) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mArea Load (0.1ms)[0m   [0;1mSELECT * FROM "areas" WHERE ("areas"."id" = 2) [0m
+Rendering template within layouts/areas
+Rendering areas/edit
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/areas/2/edit]
+
+
+Processing AreasController#update (for 127.0.0.1 at 2010-06-21 15:07:55) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"+H6TLoleVgrJfRUvFadh4adHbA2T5cTqEFNL9w2aN1s=", "id"=>"2", "area"=>{"nombre"=>"Dirección de Informática", "jerarquia_id"=>"2"}}
+  [4;35;1mArea Load (0.1ms)[0m   [0mSELECT * FROM "areas" WHERE ("areas"."id" = 2) [0m
+  [4;36;1mArea Update (0.2ms)[0m   [0;1mUPDATE "areas" SET "nombre" = 'Dirección de Informática' WHERE "id" = 2[0m
+Redirected to http://localhost:3001/areas/2
+Completed in 8ms (DB: 0) | 302 Found [http://localhost/areas/2]
+
+
+Processing AreasController#show (for 127.0.0.1 at 2010-06-21 15:07:55) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mArea Load (0.1ms)[0m   [0mSELECT * FROM "areas" WHERE ("areas"."id" = 2) [0m
+Rendering template within layouts/areas
+Rendering areas/show
+Completed in 61ms (View: 56, DB: 0) | 200 OK [http://localhost/areas/2]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-21 15:08:07) [GET]
+
+ActionController::RoutingError (No route matches "/jerarquia" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing JerarquiasController#index (for 127.0.0.1 at 2010-06-21 15:08:11) [GET]
+  [4;36;1mJerarquia Load (0.3ms)[0m   [0;1mSELECT * FROM "jerarquias" [0m
+Rendering template within layouts/jerarquias
+Rendering jerarquias/index
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/jerarquias]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-21 15:08:35) [GET]
+
+ActionController::RoutingError (No route matches "/jerarquia" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing JerarquiasController#index (for 127.0.0.1 at 2010-06-21 15:08:37) [GET]
+  [4;35;1mJerarquia Load (0.4ms)[0m   [0mSELECT * FROM "jerarquias" [0m
+Rendering template within layouts/jerarquias
+Rendering jerarquias/index
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/jerarquias]
+
+
+Processing AreasController#index (for 127.0.0.1 at 2010-06-21 15:08:50) [GET]
+  [4;36;1mArea Load (0.4ms)[0m   [0;1mSELECT * FROM "areas" [0m
+Rendering template within layouts/areas
+Rendering areas/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://localhost/areas]
+
+
+Processing PuestosController#index (for 127.0.0.1 at 2010-06-21 15:08:56) [GET]
+  [4;35;1mPuesto Load (0.4ms)[0m   [0mSELECT * FROM "puestos" [0m
+Rendering template within layouts/puestos
+Rendering puestos/index
+Completed in 11ms (View: 8, DB: 0) | 200 OK [http://localhost/puestos]
+
+
+Processing EmpleadosController#index (for 127.0.0.1 at 2010-06-21 15:09:05) [GET]
+  [4;36;1mEmpleado Load (0.5ms)[0m   [0;1mSELECT * FROM "empleados" [0m
+Rendering template within layouts/empleados
+Rendering empleados/index
+Completed in 29ms (View: 24, DB: 0) | 200 OK [http://localhost/empleados]
+
+
+Processing JerarquiasController#index (for 127.0.0.1 at 2010-06-21 15:09:15) [GET]
+  [4;35;1mJerarquia Load (0.4ms)[0m   [0mSELECT * FROM "jerarquias" [0m
+Rendering template within layouts/jerarquias
+Rendering jerarquias/index
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://localhost/jerarquias]
+
+
+Processing JerarquiasController#index (for 127.0.0.1 at 2010-06-21 15:11:25) [GET]
+  [4;36;1mJerarquia Load (0.3ms)[0m   [0;1mSELECT * FROM "jerarquias" [0m
+Rendering template within layouts/jerarquias
+Rendering jerarquias/index
+Completed in 11ms (View: 7, DB: 0) | 200 OK [http://localhost/jerarquias]
+
+
+Processing JerarquiasController#new (for 127.0.0.1 at 2010-06-21 15:11:40) [GET]
+Rendering template within layouts/jerarquias
+Rendering jerarquias/new
+Completed in 60ms (View: 6, DB: 0) | 200 OK [http://localhost/jerarquias/new]
+
+
+Processing JerarquiasController#index (for 127.0.0.1 at 2010-06-21 15:11:45) [GET]
+  [4;35;1mJerarquia Load (0.4ms)[0m   [0mSELECT * FROM "jerarquias" [0m
+Rendering template within layouts/jerarquias
+Rendering jerarquias/index
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://localhost/jerarquias]
+
+
+Processing PuestosController#index (for 127.0.0.1 at 2010-06-21 15:12:13) [GET]
+  [4;36;1mPuesto Load (0.4ms)[0m   [0;1mSELECT * FROM "puestos" [0m
+Rendering template within layouts/puestos
+Rendering puestos/index
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://localhost/puestos]

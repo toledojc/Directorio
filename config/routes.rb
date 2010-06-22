@@ -1,4 +1,12 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :jerarquias
+
+  map.resources :areas
+
+  map.resources :jerarquias
+
+  map.resources :puestos
+
   map.resources :empleados
 
   map.resources :empleados
